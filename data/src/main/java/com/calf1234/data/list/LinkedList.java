@@ -5,7 +5,7 @@ public class LinkedList<T> {
     int size;
     Node<T> list;
 
-//    增
+    //    增
     public void put(T data) {
         Node head = list;
         Node curNode = new Node(data, head);
@@ -31,13 +31,13 @@ public class LinkedList<T> {
         size++;
     }
 
-    private void checkPositionIndex(int index) throws Exception {
+    public void checkPositionIndex(int index) throws Exception {
         if (!(index >= 0 && index <= size)) {
             throw new IndexOutOfBoundsException(String.format("index: %d 非法，size: %d", index, size));
         }
     }
 
-//    删
+    //    删
     public T remove() {
         if (list != null) {
             Node node = list;
@@ -82,7 +82,7 @@ public class LinkedList<T> {
         return null;
     }
 
-//    改
+    //    改
     public void set(int index, T newData) throws Exception {
         checkPositionIndex(index);
         Node head = list;
@@ -92,7 +92,7 @@ public class LinkedList<T> {
         head.data = newData;
     }
 
-//    查
+    //    查
     public T get() {
         Node node = list;
         if (node == null) {
